@@ -16,6 +16,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using SehirRehberi.Api.Data;
+using SehirRehberi.Api.Helpers;
 
 namespace SehirRehberi.Api
 {
@@ -51,6 +52,7 @@ namespace SehirRehberi.Api
 
             services.AddScoped<IAppRepository, AppRepository>();
             services.AddScoped<IAuthRepository, AuthRepository>();
+            services.Configure<CloudinarySettings>(Configuration.GetSection("CloudinarySettings"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
