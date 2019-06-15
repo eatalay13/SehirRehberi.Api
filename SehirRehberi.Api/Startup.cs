@@ -48,7 +48,9 @@ namespace SehirRehberi.Api
                     ValidateAudience = false
                 };
             });
+
             services.AddScoped<IAppRepository, AppRepository>();
+            services.AddScoped<IAuthRepository, AuthRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
