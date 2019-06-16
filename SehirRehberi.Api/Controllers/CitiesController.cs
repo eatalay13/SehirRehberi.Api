@@ -11,7 +11,7 @@ using SehirRehberi.Api.Models;
 
 namespace SehirRehberi.Api.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/cities")]
     [ApiController]
     public class CitiesController : ControllerBase
     {
@@ -32,9 +32,10 @@ namespace SehirRehberi.Api.Controllers
         }
 
         [HttpGet("{id}")]
-        public ActionResult Get(int id)
+        [Route("detail")]
+        public ActionResult GetCityById(int cityId)
         {
-            var city = appRepository.GetCityById(id);
+            var city = appRepository.GetCityById(cityId);
             var cityToReturn = mapper.Map<CityForDetailDto>(city);
             return Ok(cityToReturn);
         }
