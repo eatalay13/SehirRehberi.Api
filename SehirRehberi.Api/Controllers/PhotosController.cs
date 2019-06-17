@@ -88,7 +88,7 @@ namespace SehirRehberi.Api.Controllers
 
         }
 
-        [HttpGet("{id}",Name ="GetPhoto")]
+        [HttpGet("{id}", Name = "GetPhoto")]
         public ActionResult GetPhoto(int id)
         {
             var photoFromDb = appRepository.GetPhoto(id);
